@@ -1,0 +1,331 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1312" viewBox="0 0 900 1312" role="img" aria-label="Hi, I'm Rudyy. Engineering Student and AI/ML Enthusiast. Currently working on: building a strong open-source foundation, making consistent and meaningful GitHub contributions. Currently learning about: Artificial Intelligence and Machine Learning, Git, GitHub and open-source workflows, Data Structures and Algorithms, JavaScript, Python libraries. Looking for help with: implementing Python in real-world projects, understanding real-world open-source standards. Fun facts: solves a Rubik's Cube in under a minute, learning Japanese as a fourth language, works out regularly.">
+  <style>
+    .sans { font-family: 'Segoe UI Variable Display', 'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif; }
+
+    /* type */
+    .ttl  { font-weight: 700; font-size: 17px; fill: #0b1b1c; letter-spacing: -.1px; }
+    .sub  { font-weight: 500; font-size: 12px; fill: #7b8c8a; }
+    .item { font-weight: 600; font-size: 14.5px; fill: #0b1b1c; }
+    .idx  { font-weight: 700; font-size: 12px; fill: #a0b0ae; }
+    .num  { font-weight: 700; font-size: 13px; }
+    .pill { font-weight: 700; font-size: 12.5px; }
+
+    /* intro animations (backwards fill: if animation is off, the final state shows) */
+    .hero, .card { animation: rise .85s cubic-bezier(.2,.7,.2,1) backwards; }
+    .row  { animation: slide .6s cubic-bezier(.2,.7,.2,1) backwards; }
+    @keyframes rise  { from { opacity: 0; transform: translateY(20px); } }
+    @keyframes slide { from { opacity: 0; transform: translateX(-16px); } }
+    .line { stroke-dasharray: 1; animation: draw 1s .7s ease-out backwards; }
+    @keyframes draw { from { stroke-dashoffset: 1; } }
+    .c    { animation: ch .2s ease-out backwards; }
+    @keyframes ch { from { fill-opacity: 0; } }
+    .cur  { animation: blink 1.1s steps(1) 3s infinite, appear .01s 3s backwards; }
+    @keyframes blink  { 0%, 49% { fill-opacity: 1; } 50%, 100% { fill-opacity: 0; } }
+    @keyframes appear { from { fill-opacity: 0; } }
+
+    /* ambient loops */
+    .float { animation: float 7s ease-in-out infinite; }
+    @keyframes float { 50% { transform: translateY(-8px); } }
+    .sheen { animation: sheen 8s ease-in-out infinite; }
+    @keyframes sheen { 0% { transform: translateX(-260px); } 55%, 100% { transform: translateX(1100px); } }
+    .pt { opacity: .35; animation: drift 7s linear infinite; }
+    @keyframes drift { 0% { opacity: 0; transform: translateY(26px); } 20% { opacity: .85; } 100% { opacity: 0; transform: translateY(-170px); } }
+    .ring { transform-box: fill-box; transform-origin: center; animation: ring 2.8s ease-out infinite; }
+    @keyframes ring { 0% { transform: scale(.7); opacity: .7; } 100% { transform: scale(1.9); opacity: 0; } }
+    .bob { animation: bob 4.5s ease-in-out infinite; }
+    @keyframes bob { 50% { transform: translateY(-2.5px); } }
+    .dotp { transform-box: fill-box; transform-origin: center; animation: dotp 2.6s ease-in-out infinite; }
+    @keyframes dotp { 50% { transform: scale(1.45); } }
+    .scan { animation: scan 10s ease-in-out infinite; }
+    @keyframes scan { 0% { opacity: 0; } 4% { opacity: 1; } 12%, 100% { opacity: 0; } }
+    .blob { animation: blob 16s ease-in-out infinite alternate; }
+    @keyframes blob { to { transform: translate(40px, 300px); } }
+    .blob2 { animation: blob2 19s ease-in-out infinite alternate; }
+    @keyframes blob2 { to { transform: translate(-40px, -320px); } }
+    .hop { animation: hop 1.2s ease-in-out infinite; }
+    @keyframes hop { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-7px); } }
+
+    /* cube sticker colour wave */
+    .st { fill: var(--a); animation: wave 12s ease-in-out infinite; }
+    @keyframes wave { 0%, 35% { fill: var(--a); } 55% { fill: var(--b); } 75% { fill: var(--c); } 100% { fill: var(--a); } }
+    .p0 { --a: #f2e8d5; --b: #ff6b5a; --c: #3ea6ff; }
+    .p1 { --a: #ffcf5c; --b: #ff9a3c; --c: #4ff0b7; }
+    .p2 { --a: #ff6b5a; --b: #3ea6ff; --c: #f2e8d5; }
+    .p3 { --a: #ff9a3c; --b: #4ff0b7; --c: #ffcf5c; }
+    .p4 { --a: #3ea6ff; --b: #f2e8d5; --c: #ff6b5a; }
+    .p5 { --a: #4ff0b7; --b: #ffcf5c; --c: #ff9a3c; }
+
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+
+  <defs>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#04161a"/>
+      <stop offset=".55" stop-color="#0a3436"/>
+      <stop offset="1" stop-color="#05191c"/>
+    </linearGradient>
+    <radialGradient id="hglow" cx=".5" cy=".5" r=".5">
+      <stop offset="0" stop-color="#4ff0b7" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#4ff0b7" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sheenG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#fff" stop-opacity=".10"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="nameG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset=".42" stop-color="#fff"/>
+      <stop offset=".5" stop-color="#7dffd0"/>
+      <stop offset=".58" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="-1 0" to="1 0" dur="5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7dffd0"/>
+      <stop offset="1" stop-color="#12b886"/>
+    </linearGradient>
+    <linearGradient id="scanG" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#4ff0b7" stop-opacity=".34"/>
+      <stop offset=".7" stop-color="#4ff0b7" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="shadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="6" stdDeviation="9" flood-color="#0b2a2a" flood-opacity=".10"/>
+    </filter>
+    <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <clipPath id="pclip"><rect width="900" height="1312" rx="28"/></clipPath>
+    <clipPath id="hclip"><rect width="852" height="280" rx="28"/></clipPath>
+  </defs>
+
+  <!-- ============ PAGE ============ -->
+  <rect width="900" height="1312" rx="28" fill="#e8f0ee"/>
+  <g clip-path="url(#pclip)">
+    <circle class="blob" cx="60" cy="300" r="130" fill="#4ff0b7" opacity=".35" filter="url(#blur)"/>
+    <circle class="blob2" cx="840" cy="1100" r="140" fill="#3ea6ff" opacity=".26" filter="url(#blur)"/>
+  </g>
+  <rect x=".5" y=".5" width="899" height="1311" rx="28" fill="none" stroke="#d3e0dd"/>
+
+  <!-- ============ HERO ============ -->
+  <g transform="translate(24,24)">
+    <g class="hero">
+      <rect width="852" height="280" rx="28" fill="url(#hg)"/>
+      <ellipse cx="676" cy="146" rx="230" ry="150" fill="url(#hglow)"/>
+
+      <g clip-path="url(#hclip)">
+        <g class="sheen"><rect x="0" y="-40" width="120" height="360" transform="skewX(-18)" fill="url(#sheenG)"/></g>
+        <circle class="pt" cx="400" cy="250" r="2" fill="#4ff0b7" style="animation-delay:-1s;animation-duration:6.5s"/>
+        <circle class="pt" cx="455" cy="262" r="3" fill="#f2e8d5" style="animation-delay:-3s;animation-duration:8s"/>
+        <circle class="pt" cx="510" cy="240" r="1.6" fill="#4ff0b7" style="animation-delay:-5s;animation-duration:7s"/>
+        <circle class="pt" cx="565" cy="266" r="2.4" fill="#ffcf5c" style="animation-delay:-2s;animation-duration:9s"/>
+        <circle class="pt" cx="620" cy="256" r="1.8" fill="#4ff0b7" style="animation-delay:-4s;animation-duration:6s"/>
+        <circle class="pt" cx="690" cy="268" r="2.6" fill="#f2e8d5" style="animation-delay:-6s;animation-duration:8.5s"/>
+        <circle class="pt" cx="745" cy="250" r="2" fill="#4ff0b7" style="animation-delay:-.5s;animation-duration:7.5s"/>
+        <circle class="pt" cx="790" cy="264" r="3" fill="#3ea6ff" style="animation-delay:-3.5s;animation-duration:9.5s"/>
+        <circle class="pt" cx="825" cy="238" r="1.6" fill="#4ff0b7" style="animation-delay:-5.5s;animation-duration:6.8s"/>
+        <circle class="pt" cx="360" cy="270" r="1.8" fill="#f2e8d5" style="animation-delay:-2.5s;animation-duration:8.2s"/>
+      </g>
+
+      <!-- logo -->
+      <circle class="ring s-acc" cx="44" cy="44" r="16" fill="none" stroke="#4ff0b7" stroke-width="1.2"/>
+      <circle cx="44" cy="44" r="16" fill="url(#chip)"/>
+      <path d="M44 35 L52 39.5 V48.5 L44 53 L36 48.5 V39.5 Z M36 39.5 L44 44 L52 39.5 M44 44 V53" fill="none" stroke="#05191c" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <text class="sans" x="70" y="50" font-size="17" font-weight="700" fill="#ffffff" letter-spacing=".3">rudyy</text>
+
+      <!-- greeting + name -->
+      <text class="sans" x="36" y="120" font-size="22" font-weight="500" fill="#8fb8b1">Hi, I'm</text>
+      <text class="sans" x="32" y="198" font-size="86" font-weight="800" letter-spacing="-3" fill="url(#nameG)">Rudyy</text>
+      <path class="line" pathLength="1" d="M36 214 H128" stroke="#4ff0b7" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+      <!-- tagline, typed -->
+      <text class="sans" x="36" y="248" font-size="17" font-weight="600" fill="#bfe9de"><tspan class="c" style="animation-delay:1.00s">E</tspan><tspan class="c" style="animation-delay:1.05s">n</tspan><tspan class="c" style="animation-delay:1.10s">g</tspan><tspan class="c" style="animation-delay:1.15s">i</tspan><tspan class="c" style="animation-delay:1.20s">n</tspan><tspan class="c" style="animation-delay:1.25s">e</tspan><tspan class="c" style="animation-delay:1.30s">e</tspan><tspan class="c" style="animation-delay:1.35s">r</tspan><tspan class="c" style="animation-delay:1.40s">i</tspan><tspan class="c" style="animation-delay:1.45s">n</tspan><tspan class="c" style="animation-delay:1.50s">g</tspan><tspan class="c" style="animation-delay:1.55s">&#160;</tspan><tspan class="c" style="animation-delay:1.60s">S</tspan><tspan class="c" style="animation-delay:1.65s">t</tspan><tspan class="c" style="animation-delay:1.70s">u</tspan><tspan class="c" style="animation-delay:1.75s">d</tspan><tspan class="c" style="animation-delay:1.80s">e</tspan><tspan class="c" style="animation-delay:1.85s">n</tspan><tspan class="c" style="animation-delay:1.90s">t</tspan><tspan class="c" style="animation-delay:1.95s">&#160;</tspan><tspan class="c" fill="#4ff0b7" style="animation-delay:2.00s">/</tspan><tspan class="c" style="animation-delay:2.05s">&#160;</tspan><tspan class="c" style="animation-delay:2.10s">A</tspan><tspan class="c" style="animation-delay:2.15s">I</tspan><tspan class="c" style="animation-delay:2.20s">/</tspan><tspan class="c" style="animation-delay:2.25s">M</tspan><tspan class="c" style="animation-delay:2.30s">L</tspan><tspan class="c" style="animation-delay:2.35s">&#160;</tspan><tspan class="c" style="animation-delay:2.40s">E</tspan><tspan class="c" style="animation-delay:2.45s">n</tspan><tspan class="c" style="animation-delay:2.50s">t</tspan><tspan class="c" style="animation-delay:2.55s">h</tspan><tspan class="c" style="animation-delay:2.60s">u</tspan><tspan class="c" style="animation-delay:2.65s">s</tspan><tspan class="c" style="animation-delay:2.70s">i</tspan><tspan class="c" style="animation-delay:2.75s">a</tspan><tspan class="c" style="animation-delay:2.80s">s</tspan><tspan class="c" style="animation-delay:2.85s">t</tspan><tspan class="cur" fill="#4ff0b7">_</tspan></text>
+
+      <!-- orbit (drawn behind the cube so the dot passes behind it) -->
+      <g transform="rotate(-18 676 146)">
+        <ellipse cx="676" cy="146" rx="132" ry="52" fill="none" stroke="#4ff0b7" stroke-opacity=".2" stroke-dasharray="2 7"/>
+        <circle r="3.6" fill="#7dffd0">
+          <animateMotion dur="9s" repeatCount="indefinite" path="M544 146 a132 52 0 1 1 264 0 a132 52 0 1 1 -264 0"/>
+        </circle>
+      </g>
+
+      <!-- rubik's cube -->
+      <g class="float">
+        <polygon points="676,50 759.14,98 759.14,194 676,242 592.86,194 592.86,98" fill="#08272a" stroke="#4ff0b7" stroke-opacity=".25"/>
+
+        <g transform="matrix(27.71 16 27.71 -16 592.86 98)">
+          <rect class="st p1" x=".04" y=".04" width=".92" height=".92" rx=".12" style="animation-delay:0s"/>
+          <rect class="st p0" x="1.04" y=".04" width=".92" height=".92" rx=".12" style="animation-delay:-.8s"/>
+          <rect class="st p2" x="2.04" y=".04" width=".92" height=".92" rx=".12" style="animation-delay:-1.6s"/>
+          <rect class="st p0" x=".04" y="1.04" width=".92" height=".92" rx=".12" style="animation-delay:-.8s"/>
+          <rect class="st p4" x="1.04" y="1.04" width=".92" height=".92" rx=".12" style="animation-delay:-1.6s"/>
+          <rect class="st p0" x="2.04" y="1.04" width=".92" height=".92" rx=".12" style="animation-delay:-2.4s"/>
+          <rect class="st p3" x=".04" y="2.04" width=".92" height=".92" rx=".12" style="animation-delay:-1.6s"/>
+          <rect class="st p0" x="1.04" y="2.04" width=".92" height=".92" rx=".12" style="animation-delay:-2.4s"/>
+          <rect class="st p5" x="2.04" y="2.04" width=".92" height=".92" rx=".12" style="animation-delay:-3.2s"/>
+        </g>
+
+        <g transform="matrix(27.71 16 0 32 592.86 98)" opacity=".8">
+          <rect class="st p2" x=".04" y=".04" width=".92" height=".92" rx=".12" style="animation-delay:-2s"/>
+          <rect class="st p4" x="1.04" y=".04" width=".92" height=".92" rx=".12" style="animation-delay:-2.8s"/>
+          <rect class="st p2" x="2.04" y=".04" width=".92" height=".92" rx=".12" style="animation-delay:-3.6s"/>
+          <rect class="st p5" x=".04" y="1.04" width=".92" height=".92" rx=".12" style="animation-delay:-2.8s"/>
+          <rect class="st p2" x="1.04" y="1.04" width=".92" height=".92" rx=".12" style="animation-delay:-3.6s"/>
+          <rect class="st p0" x="2.04" y="1.04" width=".92" height=".92" rx=".12" style="animation-delay:-4.4s"/>
+          <rect class="st p2" x=".04" y="2.04" width=".92" height=".92" rx=".12" style="animation-delay:-3.6s"/>
+          <rect class="st p1" x="1.04" y="2.04" width=".92" height=".92" rx=".12" style="animation-delay:-4.4s"/>
+          <rect class="st p2" x="2.04" y="2.04" width=".92" height=".92" rx=".12" style="animation-delay:-5.2s"/>
+        </g>
+
+        <g transform="matrix(27.71 -16 0 32 676 146)" opacity=".92">
+          <rect class="st p4" x=".04" y=".04" width=".92" height=".92" rx=".12" style="animation-delay:-4s"/>
+          <rect class="st p5" x="1.04" y=".04" width=".92" height=".92" rx=".12" style="animation-delay:-4.8s"/>
+          <rect class="st p4" x="2.04" y=".04" width=".92" height=".92" rx=".12" style="animation-delay:-5.6s"/>
+          <rect class="st p3" x=".04" y="1.04" width=".92" height=".92" rx=".12" style="animation-delay:-4.8s"/>
+          <rect class="st p4" x="1.04" y="1.04" width=".92" height=".92" rx=".12" style="animation-delay:-5.6s"/>
+          <rect class="st p1" x="2.04" y="1.04" width=".92" height=".92" rx=".12" style="animation-delay:-6.4s"/>
+          <rect class="st p4" x=".04" y="2.04" width=".92" height=".92" rx=".12" style="animation-delay:-5.6s"/>
+          <rect class="st p0" x="1.04" y="2.04" width=".92" height=".92" rx=".12" style="animation-delay:-6.4s"/>
+          <rect class="st p4" x="2.04" y="2.04" width=".92" height=".92" rx=".12" style="animation-delay:-7.2s"/>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- ============ 01 — working on ============ -->
+  <g transform="translate(24,320)"><g class="card" style="animation-delay:.15s">
+    <rect width="852" height="178" rx="22" fill="#ffffff" filter="url(#shadow)"/>
+    <g class="bob"><circle cx="40" cy="38" r="18" fill="#fff3d6"/><text class="sans num" x="40" y="43" text-anchor="middle" fill="#c98a00">01</text></g>
+    <text class="sans ttl" x="68" y="34">Currently working on</text>
+    <text class="sans sub" x="68" y="52">2 items</text>
+    <rect x="713" y="24" width="115" height="28" rx="14" fill="#fff3d6"/>
+    <circle class="dotp" cx="728" cy="38" r="3.2" fill="#c98a00"/>
+    <text class="sans pill" x="740" y="42.5" fill="#c98a00">In progress</text>
+
+    <g class="row" style="animation-delay:.45s">
+      <rect x="24" y="72" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="72" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:1.8s"/>
+      <circle cx="46" cy="92" r="11" fill="#d9fbee"/><circle class="dotp" cx="46" cy="92" r="4.5" fill="#12b886" style="animation-delay:0s"/>
+      <text class="sans item" x="68" y="97">Building a strong open-source foundation</text>
+      <text class="sans idx" x="812" y="97" text-anchor="end">01</text>
+    </g>
+    <g class="row" style="animation-delay:.53s">
+      <rect x="24" y="120" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="120" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:2.25s"/>
+      <circle cx="46" cy="140" r="11" fill="#fff0cc"/><circle class="dotp" cx="46" cy="140" r="4.5" fill="#f0a500" style="animation-delay:-.35s"/>
+      <text class="sans item" x="68" y="145">Making consistent and meaningful GitHub contributions</text>
+      <text class="sans idx" x="812" y="145" text-anchor="end">02</text>
+    </g>
+  </g></g>
+
+  <!-- ============ 02 — learning ============ -->
+  <g transform="translate(24,514)"><g class="card" style="animation-delay:.25s">
+    <rect width="852" height="322" rx="22" fill="#ffffff" filter="url(#shadow)"/>
+    <g class="bob" style="animation-delay:-.6s"><circle cx="40" cy="38" r="18" fill="#d9fbee"/><text class="sans num" x="40" y="43" text-anchor="middle" fill="#0a9f73">02</text></g>
+    <text class="sans ttl" x="68" y="34">Currently learning about</text>
+    <text class="sans sub" x="68" y="52">5 items</text>
+    <rect x="733" y="24" width="95" height="28" rx="14" fill="#d9fbee"/>
+    <circle class="dotp" cx="748" cy="38" r="3.2" fill="#0a9f73"/>
+    <text class="sans pill" x="760" y="42.5" fill="#0a9f73">Learning</text>
+
+    <g class="row" style="animation-delay:.55s">
+      <rect x="24" y="72" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="72" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:2.7s"/>
+      <circle cx="46" cy="92" r="11" fill="#ffe3dc"/><circle class="dotp" cx="46" cy="92" r="4.5" fill="#ee5a43" style="animation-delay:-.7s"/>
+      <text class="sans item" x="68" y="97">Artificial Intelligence &amp; Machine Learning</text>
+      <text class="sans idx" x="812" y="97" text-anchor="end">01</text>
+    </g>
+    <g class="row" style="animation-delay:.63s">
+      <rect x="24" y="120" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="120" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:3.15s"/>
+      <circle cx="46" cy="140" r="11" fill="#dcecff"/><circle class="dotp" cx="46" cy="140" r="4.5" fill="#2f8ae6" style="animation-delay:-1.05s"/>
+      <text class="sans item" x="68" y="145">Git, GitHub, and open-source workflows</text>
+      <text class="sans idx" x="812" y="145" text-anchor="end">02</text>
+    </g>
+    <g class="row" style="animation-delay:.71s">
+      <rect x="24" y="168" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="168" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:3.6s"/>
+      <circle cx="46" cy="188" r="11" fill="#ece8ff"/><circle class="dotp" cx="46" cy="188" r="4.5" fill="#7a5ce6" style="animation-delay:-1.4s"/>
+      <text class="sans item" x="68" y="193">Data Structures &amp; Algorithms (DSA)</text>
+      <text class="sans idx" x="812" y="193" text-anchor="end">03</text>
+    </g>
+    <g class="row" style="animation-delay:.79s">
+      <rect x="24" y="216" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="216" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:4.05s"/>
+      <circle cx="46" cy="236" r="11" fill="#d9fbee"/><circle class="dotp" cx="46" cy="236" r="4.5" fill="#12b886" style="animation-delay:-1.75s"/>
+      <text class="sans item" x="68" y="241">JavaScript</text>
+      <text class="sans idx" x="812" y="241" text-anchor="end">04</text>
+    </g>
+    <g class="row" style="animation-delay:.87s">
+      <rect x="24" y="264" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="264" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:4.5s"/>
+      <circle cx="46" cy="284" r="11" fill="#fff0cc"/><circle class="dotp" cx="46" cy="284" r="4.5" fill="#f0a500" style="animation-delay:-2.1s"/>
+      <text class="sans item" x="68" y="289">Python libraries</text>
+      <text class="sans idx" x="812" y="289" text-anchor="end">05</text>
+    </g>
+  </g></g>
+
+  <!-- ============ 03 — help ============ -->
+  <g transform="translate(24,852)"><g class="card" style="animation-delay:.35s">
+    <rect width="852" height="178" rx="22" fill="#ffffff" filter="url(#shadow)"/>
+    <g class="bob" style="animation-delay:-1.2s"><circle cx="40" cy="38" r="18" fill="#dcecff"/><text class="sans num" x="40" y="43" text-anchor="middle" fill="#2f7fd6">03</text></g>
+    <text class="sans ttl" x="68" y="34">Looking for help with</text>
+    <text class="sans sub" x="68" y="52">2 items</text>
+    <rect x="761" y="24" width="67" height="28" rx="14" fill="#dcecff"/>
+    <circle class="dotp" cx="776" cy="38" r="3.2" fill="#2f7fd6"/>
+    <text class="sans pill" x="788" y="42.5" fill="#2f7fd6">Open</text>
+
+    <g class="row" style="animation-delay:.65s">
+      <rect x="24" y="72" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="72" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:4.95s"/>
+      <circle cx="46" cy="92" r="11" fill="#ffe3dc"/><circle class="dotp" cx="46" cy="92" r="4.5" fill="#ee5a43" style="animation-delay:-2.45s"/>
+      <text class="sans item" x="68" y="97">Implementing Python in real-world projects</text>
+      <text class="sans idx" x="812" y="97" text-anchor="end">01</text>
+    </g>
+    <g class="row" style="animation-delay:.73s">
+      <rect x="24" y="120" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="120" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:5.4s"/>
+      <circle cx="46" cy="140" r="11" fill="#dcecff"/><circle class="dotp" cx="46" cy="140" r="4.5" fill="#2f8ae6" style="animation-delay:-2.8s"/>
+      <text class="sans item" x="68" y="145">Understanding real-world open-source standards</text>
+      <text class="sans idx" x="812" y="145" text-anchor="end">02</text>
+    </g>
+  </g></g>
+
+  <!-- ============ 04 — fun facts ============ -->
+  <g transform="translate(24,1046)"><g class="card" style="animation-delay:.45s">
+    <rect width="852" height="226" rx="22" fill="#ffffff" filter="url(#shadow)"/>
+    <g class="bob" style="animation-delay:-1.8s"><circle cx="40" cy="38" r="18" fill="#f4ecd8"/><text class="sans num" x="40" y="43" text-anchor="middle" fill="#9a7b2f">04</text></g>
+    <text class="sans ttl" x="68" y="34">Fun facts</text>
+    <text class="sans sub" x="68" y="52">3 items</text>
+    <rect x="733" y="24" width="95" height="28" rx="14" fill="#f4ecd8"/>
+    <circle class="dotp" cx="748" cy="38" r="3.2" fill="#9a7b2f"/>
+    <text class="sans pill" x="760" y="42.5" fill="#9a7b2f">Off duty</text>
+
+    <g class="row" style="animation-delay:.75s">
+      <rect x="24" y="72" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="72" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:5.85s"/>
+      <circle cx="46" cy="92" r="11" fill="#ffe3dc"/><circle class="dotp" cx="46" cy="92" r="4.5" fill="#ee5a43" style="animation-delay:-3.15s"/>
+      <text class="sans item" x="68" y="97">Solves a Rubik's Cube in under a minute</text>
+      <text class="sans idx" x="812" y="97" text-anchor="end">01</text>
+    </g>
+    <g class="row" style="animation-delay:.83s">
+      <rect x="24" y="120" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="120" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:6.3s"/>
+      <circle cx="46" cy="140" r="11" fill="#dcecff"/><circle class="dotp" cx="46" cy="140" r="4.5" fill="#2f8ae6" style="animation-delay:-3.5s"/>
+      <text class="sans item" x="68" y="145">Learning Japanese as a fourth language</text>
+      <text class="sans idx" x="812" y="145" text-anchor="end">02</text>
+    </g>
+    <g class="row" style="animation-delay:.91s">
+      <rect x="24" y="168" width="804" height="40" rx="12" fill="#f2f6f5"/>
+      <rect class="scan" x="24" y="168" width="804" height="40" rx="12" fill="url(#scanG)" opacity="0" style="animation-delay:6.75s"/>
+      <circle cx="46" cy="188" r="11" fill="#d9fbee"/><circle class="dotp" cx="46" cy="188" r="4.5" fill="#12b886" style="animation-delay:-3.85s"/>
+      <text class="sans item" x="68" y="193">Works out regularly</text>
+      <text class="sans idx" x="812" y="193" text-anchor="end">03</text>
+    </g>
+  </g></g>
+
+  <!-- footer dots -->
+  <circle class="hop" cx="438" cy="1294" r="3" fill="#12b886"/>
+  <circle class="hop" cx="450" cy="1294" r="3" fill="#12b886" style="animation-delay:.15s"/>
+  <circle class="hop" cx="462" cy="1294" r="3" fill="#12b886" style="animation-delay:.3s"/>
+</svg>
